@@ -53,4 +53,19 @@ public class Main {
         System.out.println("Terima kasih telah menggunakan SIRAKET!");
         scanner.close();
     }
+    // Function tanpa parameter: Menampilkan daftar film yang tersedia
+    private static void filmTersedia() {
+        System.out.println("Daftar Film yang Tersedia:");
+        for (String film : film) {
+            System.out.println("- " + film);
+        }
+    }
+
+    // Function tanpa parameter: Menampilkan rute kereta api yang tersedia
+    private static void ruteTersedia() {
+        System.out.println("Rute Kereta Api yang Tersedia:");
+        for (String rute : ruteKA) {
+            System.out.println("- " + rute);
+        }
+    }
 }
