@@ -6,11 +6,11 @@ Atau pengen nonton film tapi males ngantri tiket??
 
 **TENANG!! KAMI PUNYA SOLUSINYA!**
 
-Kami dengan bangga mempersembahkan: SIRAKET !!
+Kami dengan bangga mempersembahkan: **SIRAKET**!!
 
 SIRAKET merupakan program Java sederhana yang memungkinkan anda untuk memesan tiket bioskop dan kereta api, tanpa harus dateng ke bioskop atau ke stasiun kereta langsung! SIRAKET adalah singkatan dari Sistem Reservasi Tiket.
 
-Gausah takut ngatri lagi deh, atau pusing nyari tiket kereta, ingat ada **SIRAKET**!!
+Gausah takut ngatri tiket bioskop lagi deh, atau pusing nyari tiket kereta, 'kan ada **SIRAKET**!!
 
 ## Ingfokan fitur-fitur
 - Menampilkan daftar film dan rute kereta api
