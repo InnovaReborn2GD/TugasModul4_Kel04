@@ -68,4 +68,41 @@ public class Main {
             System.out.println("- " + rute);
         }
     }
+    // Method tanpa return type: Melakukan proses reservasi tiket bioskop
+    private static void pesanTiketFilm(Scanner scanner) {
+        if (kursiBioskopTersedia <= 0) {
+            System.out.println("Maaf, kursi bioskop sudah penuh.");
+            return;
+        }
+
+        System.out.print("\nMasukkan nama Anda: ");
+        scanner.nextLine(); // Consume newline
+        String nama = scanner.nextLine();
+
+        filmTersedia();
+        System.out.print("Pilih film (masukkan nomor urut): ");
+        int pilihanFilm = scanner.nextInt();
+
+        if (pilihanFilm < 1 || pilihanFilm > film.length) {
+            System.out.println("Pilihan film tidak valid.");
+            return;
+        }
+
+        System.out.print("Masukkan jumlah tiket yang ingin dipesan: ");
+        int jumlahTiket = scanner.nextInt();
+
+        if (jumlahTiket > kursiBioskopTersedia) {
+            System.out.println("Maaf, jumlah tiket melebihi kursi yang tersedia.");
+            return;
+        }
+
+        int totalBiaya = hitungTotalBiaya(hargaTiketFilm, jumlahTiket);
+        kursiBioskopTersedia -= jumlahTiket;
+
+        System.out.println("\nTiket berhasil dipesan! Berikut ini infomasi tiket anda:");
+        System.out.println("Nama: " + nama);
+        System.out.println("Film: " + film[pilihanFilm - 1]);
+        System.out.println("Jumlah tiket: " + jumlahTiket);
+        System.out.println("Total biaya: IDR " + totalBiaya);
+    }
 }
