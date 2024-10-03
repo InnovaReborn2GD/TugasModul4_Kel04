@@ -14,6 +14,7 @@ public class Main {
     private static int kursiBioskopTersedia = 40;
     private static int KursiKAtersedia = 110;
 
+    // Menu utama
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean lanjutPesan = true;
@@ -26,9 +27,9 @@ public class Main {
             System.out.println("4. Pesan tiket kereta api");
             System.out.println("5. Keluar");
             System.out.print("Pilih opsi: ");
-            int choice = scanner.nextInt();
+            int pilihanMenu = scanner.nextInt();
 
-            switch (choice) {
+            switch (pilihanMenu) {
                 case 1:
                     filmTersedia();
                     break;
@@ -53,7 +54,8 @@ public class Main {
         System.out.println("Terima kasih telah menggunakan SIRAKET!");
         scanner.close();
     }
-    // Function tanpa parameter: Menampilkan daftar film yang tersedia
+
+    // Function non return tanpa parameter: Menampilkan daftar film yang tersedia
     private static void filmTersedia() {
         System.out.println("Daftar Film yang Tersedia:");
         for (String film : film) {
@@ -61,18 +63,19 @@ public class Main {
         }
     }
 
-    // Function tanpa parameter: Menampilkan rute kereta api yang tersedia
+    // Function non return tanpa parameter: Menampilkan rute KA yang tersedia
     private static void ruteTersedia() {
         System.out.println("Rute Kereta Api yang Tersedia:");
         for (String rute : ruteKA) {
             System.out.println("- " + rute);
         }
     }
-    // Method tanpa return type: Melakukan proses reservasi tiket bioskop
+
+    // Method non return berparameter: Melakukan proses reservasi tiket bioskop
     private static void pesanTiketFilm(Scanner scanner) {
         if (kursiBioskopTersedia <= 0) {
             System.out.println("Maaf, kursi bioskop sudah penuh.");
-            return;
+            return; // Mencegah kode selanjutnya tereksekusi jika tiket habis
         }
 
         System.out.print("\nMasukkan nama Anda: ");
@@ -93,7 +96,7 @@ public class Main {
 
         if (jumlahTiket > kursiBioskopTersedia) {
             System.out.println("Maaf, jumlah tiket melebihi kursi yang tersedia.");
-            return;
+            return; // Mencegah kode selanjutnya tereksekusi jika tiket habis
         }
 
         int totalBiaya = hitungTotalBiaya(hargaTiketFilm, jumlahTiket);
@@ -105,7 +108,8 @@ public class Main {
         System.out.println("Jumlah tiket: " + jumlahTiket);
         System.out.println("Total biaya: IDR " + totalBiaya);
     }
-    // Method tanpa return type: Melakukan proses reservasi tiket kereta api
+    
+    // Method non return berparameter: Melakukan proses reservasi tiket kereta api
     private static void pesanTiketKA(Scanner scanner) {
         if (KursiKAtersedia <= 0) {
             System.out.println("Maaf, tiket kereta api sudah habis.");
@@ -143,7 +147,7 @@ public class Main {
         System.out.println("Total biaya: IDR " + totalBiaya);
     }
 
-    // Function dengan parameter: Menghitung total biaya tiket berdasarkan jenis tiket dan jumlah yang dipesan
+    // Function return type berparameter: Menghitung total biaya tiket berdasarkan jenis tiket dan jumlah yang dipesan
     private static int hitungTotalBiaya(int ticketPrice, int quantity) {
         return ticketPrice * quantity;
     }
