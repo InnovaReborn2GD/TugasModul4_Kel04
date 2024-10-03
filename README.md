@@ -33,8 +33,7 @@ Atau bisa juga:
    ```  
 4. Selesai! Program berhasil berjalan (padahal gapunya kaki jirr 💀)  
 
-![image](https://github.com/user-attachments/assets/5bd9a64d-8195-484a-8fe9-a212ddb77985)
-
+![image](https://github.com/user-attachments/assets/d8a583cd-abe9-4246-903a-ef249c94d6f6)  
 **OK GAS OK GASS TUNTASKAN MODUL EMPAT !!** 💪💪
 
 
