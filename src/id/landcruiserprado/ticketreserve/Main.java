@@ -105,4 +105,46 @@ public class Main {
         System.out.println("Jumlah tiket: " + jumlahTiket);
         System.out.println("Total biaya: IDR " + totalBiaya);
     }
+    // Method tanpa return type: Melakukan proses reservasi tiket kereta api
+    private static void pesanTiketKA(Scanner scanner) {
+        if (KursiKAtersedia <= 0) {
+            System.out.println("Maaf, tiket kereta api sudah habis.");
+            return;
+        }
+
+        System.out.print("\nMasukkan nama Anda: ");
+        scanner.nextLine();
+        String name = scanner.nextLine();
+
+        ruteTersedia();
+        System.out.print("Pilih rute (masukkan nomor urut): ");
+        int pilihanRute = scanner.nextInt();
+
+        if (pilihanRute < 1 || pilihanRute > ruteKA.length) {
+            System.out.println("Pilihan rute tidak valid.");
+            return;
+        }
+
+        System.out.print("Masukkan jumlah tiket yang ingin dipesan: ");
+        int jumlahTiket = scanner.nextInt();
+
+        if (jumlahTiket > KursiKAtersedia) {
+            System.out.println("Maaf, jumlah tiket melebihi yang tersedia.");
+            return;
+        }
+
+        int totalBiaya = hitungTotalBiaya(hargaTiketKA, jumlahTiket);
+        KursiKAtersedia -= jumlahTiket;
+
+        System.out.println("\nTiket berhasil dipesan! Berikut ini infomasi tiket anda:");
+        System.out.println("Nama: " + name);
+        System.out.println("Rute: " + ruteKA[pilihanRute - 1]);
+        System.out.println("Jumlah tiket: " + jumlahTiket);
+        System.out.println("Total biaya: IDR " + totalBiaya);
+    }
+
+    // Function dengan parameter: Menghitung total biaya tiket berdasarkan jenis tiket dan jumlah yang dipesan
+    private static int hitungTotalBiaya(int ticketPrice, int quantity) {
+        return ticketPrice * quantity;
+    }
 }
