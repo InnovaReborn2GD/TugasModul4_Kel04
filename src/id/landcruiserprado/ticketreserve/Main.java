@@ -46,7 +46,7 @@ public class Main {
                     lanjutPesan = false;
                     break;
                 default:
-                    System.out.println("Pilihan yang anda masukkan tidak sah, silakan coba lagi");
+                    throw new ArithmeticException("Pilihan tidak sah");
             }
             System.out.println();
         }
